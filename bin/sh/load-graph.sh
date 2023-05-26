@@ -60,7 +60,7 @@ else
 fi
 
 # convert .mtx/.vtx files to binary .vtb/.grb files
-if [[ ! -f ${OUTPUT_PATH}/graph.vtb && ! -f ${OUTPUT_PATH}/graph.grb ]]; then
+if [[ ! -f ${OUTPUT_PATH}/graph.vtb || ! -f ${OUTPUT_PATH}/graph.grb ]]; then
     bin/exe/converter --data-dir ${OUTPUT_PATH}
 else
     echo "Transformed binary files (grb/vtb) already exist, no conversion required"
